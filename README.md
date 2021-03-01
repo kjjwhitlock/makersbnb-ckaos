@@ -7,6 +7,14 @@ Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol
    so I can access it's features, 
    I want to sign up as a user to MakersBNB. (*MVP*)
    
+10. As a user,
+    so that my information is recorded and I am contactable,
+    I want to be able to return to my account to sign-in. (*MVP*)
+
+11. As a user,
+    so that I can keep my private information secure when using a public computer,
+    I want to be able sign out of my account. (*MVP*)
+   
 2. As a host, 
    so that I can advertise my spare room, 
    I would like to list a space. (*MVP*)
@@ -18,14 +26,7 @@ Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol
 7. As a host,
    so that I can control when I rent my space,
    I would like to approve or decline a booking request.(*MVP*)
-   
-10. As a user,
-    so that my information is recorded and I am contactable,
-    I want to be able to return to my account to sign-in. (*MVP*)
-
-11. As a user,
-    so that I can keep my private information secure when using a public computer,
-    I want to be able sign out of my account. (*MVP*)
+  
  
 3. As a host,
    so that I can list my multiple spare rooms, 
