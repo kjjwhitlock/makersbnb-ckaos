@@ -27,7 +27,6 @@ Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol
     so that I can keep my private information secure when using a public computer,
     I want to be able sign out of my account. (*MVP*)
  
-   
 3. As a host,
    so that I can list my multiple spare rooms, 
    I would like to list multiple spaces. (not MVP)
