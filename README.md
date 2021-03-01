@@ -2,7 +2,7 @@
 Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol Paek
 
 Important docs: 
-Our plan: https://docs.google.com/document/d/18DeisG9voAN-hQvqSIoGkJ4cZx1sYFnrQLl9s-KmQr0/edit
+Our plan: https://docs.google.com/document/d/18DeisG9voAN-hQvqSIoGkJ4cZx1sYFnrQLl9s-KmQr0/edit <br>
 Ticket board: https://trello.com/b/JEjfBQFP/team-ckaos-ticket-board
 
 ### User stories ###
