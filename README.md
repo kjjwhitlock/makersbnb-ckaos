@@ -2,7 +2,7 @@
 Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol Paek
 
 ### User stories ###
-
+```
 1. As a person with a spare room,
    so I can access it's features, 
    I want to sign up as a user to MakersBNB. (*MVP*)
@@ -39,7 +39,7 @@ Makersbnb Project - Adam Jonas,  Christine Chee, Katie Whitlock, Olga Chmaj, Sol
    so that I can have my pick of renters,
    I want to allow multiple booking requests until I have confirmed a booking.(not MVP)
  
-
+```
 ### Specifications ####
 
 Any signed-up user can list a new space.
