@@ -1,5 +1,5 @@
 require 'coveralls'
-
+require_relative 'setup_database'
 ENV['ENVIRONMENT'] = 'test'
 ENV['RACK_ENV'] = 'test'
 
@@ -7,6 +7,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'rake'
+require 'pg'
 
 require_relative '../makersbnb'
 
