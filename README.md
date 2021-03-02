@@ -72,3 +72,8 @@ Branching
 To push a new branch to the remote repo:
 
 `git push --set-upstream origin <branch-name>`
+
+To pull an existing branch from the remote repo:
+
+`git checkout -b <branch-name>`
+`git branch --set-upstream-to=origin/<branch-name>`
