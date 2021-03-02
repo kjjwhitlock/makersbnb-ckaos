@@ -12,4 +12,9 @@ class User
     user = DatabaseConnection.query("INSERT INTO users (name, email, password) VALUES ('#{name}', '#{email}', '#{password}') RETURNING *;")
     self.new(user[0]['id'], user[0]['name'], user[0]['email'], user[0]['password'])
   end
+
+  def self.find(id:)
+    user = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id};")
+    self.new(user[0]['id'], user[0]['name'], user[0]['email'], user[0]['password'])
+  end
 end
