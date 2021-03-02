@@ -2,10 +2,12 @@ require 'sinatra/base'
 require_relative 'database_connection_setup'
 require_relative 'lib/database_connection'
 require_relative 'lib/user'
+require './lib/space'
 
 class MakersBnb < Sinatra::Base
 
   enable :sessions
+  set :session_secret, 'ckaos'
 
   get '/' do
     erb :index
@@ -22,6 +24,19 @@ class MakersBnb < Sinatra::Base
 
   get '/spaces' do
     @user = User.find(id: session[:id])
-    erb :'spaces/index'
+    @spaces = Space.all
+    erb :'/spaces/index'
   end
+
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces' do
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/spaces'
+  end
+
+  run! if app_file == $0
+
 end
