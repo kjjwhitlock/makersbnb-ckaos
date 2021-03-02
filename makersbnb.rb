@@ -16,4 +16,9 @@ class MakersBnb < Sinatra::Base
     session[:id] = user.id
     redirect '/spaces'
   end
+
+  get '/spaces' do
+    @user = User.find(id: session[:id])
+    erb :'spaces/index'
+  end
 end
