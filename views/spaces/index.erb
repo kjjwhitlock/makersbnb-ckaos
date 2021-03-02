@@ -1,0 +1,16 @@
+
+<center> <ul><% @spaces.each do |space| %>
+  <li> <%= space.name %> <br>
+       <%= space.description %> <br>
+       £<%= space.price %>
+  </li>
+  <% end %>
+</ul>
+
+
+
+<form action='/spaces/new' method='get'>
+  <input type='submit' name='Add a space' value='Add a space'>
+</form>
+
+</center>
