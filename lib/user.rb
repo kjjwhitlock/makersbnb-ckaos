@@ -1,4 +1,5 @@
 class User
+  attr_reader :id, :name, :email, :password
 
   def initialize(id, name, email, password)
     @id = id
@@ -8,7 +9,6 @@ class User
   end
 
   def self.create(name:, email:, password:)
-    p DatabaseConnection.connection
     user = DatabaseConnection.query("INSERT INTO users (name, email, password) VALUES ('#{name}', '#{email}', '#{password}') RETURNING *;")
     self.new(user[0]['id'], user[0]['name'], user[0]['email'], user[0]['password'])
   end

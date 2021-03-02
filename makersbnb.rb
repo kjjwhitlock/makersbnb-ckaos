@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'database_connection_setup'
-require './lib/user'
+require_relative 'lib/database_connection'
+require_relative 'lib/user'
 
 class MakersBnb < Sinatra::Base
   get '/' do

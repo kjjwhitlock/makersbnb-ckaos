@@ -7,7 +7,7 @@ describe DatabaseConnection do
   end
 
   describe '.query' do
-    xit 'calls a query on the connection from .setup' do
+    it 'calls a query on the connection from .setup' do
       connection = described_class.setup(dbname: 'makersbnb_test')
       expect(connection).to receive(:exec).with('SELECT * FROM users;')
       described_class.query('SELECT * FROM users;')
