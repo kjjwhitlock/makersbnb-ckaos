@@ -5,9 +5,10 @@ require_relative 'lib/user'
 require './lib/space'
 
 class MakersBnb < Sinatra::Base
+  before { @user = User.find(id: session[:id]) if session[:id] }
 
   enable :sessions
-  set :session_secret, 'ckaos'
+  set :session_secret, ENV['SESSION_SECRET']
 
   get '/' do
     erb :index
@@ -18,12 +19,12 @@ class MakersBnb < Sinatra::Base
     email = params[:email]
     password = params[:password]
     user = User.create(name: name, email: email, password: password)
+    p session[:id]
     session[:id] = user.id
     redirect '/spaces'
   end
 
   get '/spaces' do
-    @user = User.find(id: session[:id])
     @spaces = Space.all
     erb :'/spaces/index'
   end

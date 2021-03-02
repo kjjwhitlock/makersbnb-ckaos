@@ -1,4 +1,6 @@
-Hello <%= @user.name %>!
+<% if @user %>
+  Hello <%= @user.name %>!
+<% end %>
 
 <center> <ul><% @spaces.each do |space| %>
   <li> <%= space.name %> <br>
