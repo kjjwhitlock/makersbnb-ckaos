@@ -38,6 +38,8 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
+  
+
   run! if app_file == $0
 
 end
