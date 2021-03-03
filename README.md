@@ -75,7 +75,7 @@ To push a new branch to the remote repo:
 To pull an existing branch from the remote repo:
 
 `git checkout -b <branch-name>`
-`git branch --set-upstream-to=origin/<branch-name>`
+`git pull origin <branch>`
 
 Requests table
 id | space_id              |  renter_id

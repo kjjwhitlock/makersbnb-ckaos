@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'database_connection_setup'
 require_relative 'lib/database_connection'
 require_relative 'lib/user'
+require_relative 'lib/request'
 require './lib/space'
 
 class MakersBnb < Sinatra::Base
@@ -43,12 +44,13 @@ class MakersBnb < Sinatra::Base
     erb :'spaces/show'
   end
 
-  post '/requests' do
+  post '/requests/:id' do
+    Request.create(space_id: params[:id], renter_id: session[:id])
     redirect '/requests'
   end
 
   get '/requests' do
-
+    erb :'requests/index'
   end
 
   run! if app_file == $0

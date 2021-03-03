@@ -1,7 +1,6 @@
 <h1><%= @space.name %></h1>
  <p><%= @space.description %></p>
 
-
-<form action='/requests' method='post'>
+<form action='/requests/<%= @space.id %>' method='post'>
   <input type='submit' value='Request to book'>
 </form>
