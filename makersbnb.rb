@@ -50,6 +50,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/requests' do
+    @requests = Request.all
     erb :'requests/index'
   end
 

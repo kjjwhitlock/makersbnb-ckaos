@@ -1,1 +1,8 @@
-<%= @request.all %>
+
+<center>
+Your requests<br>
+<% @requests.each do |request| %>
+   <%= request.space.name %><br>
+   <%= request.space.description %>
+<% end %>
+</center>
