@@ -2,6 +2,7 @@
   Hello, <%= @user.name %>!
 <% end %>
 
+
 <center> <ul><% @spaces.each do |space| %>
   <li> <%= space.name %> <br>
        <%= space.description %> <br>
@@ -17,3 +18,7 @@
 </form>
 
 </center>
+
+<form action="/sessions/destroy" method="post">
+  <input type='submit' name='sign_out' value='sign_out'>
+</form>

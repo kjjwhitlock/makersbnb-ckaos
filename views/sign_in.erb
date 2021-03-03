@@ -1,8 +1,7 @@
 
- <% if @failed_authentication %>
-  <p> Check your email or password! </p>
-  <% end %>
-
+<% if @alert %>
+   <p> Check your email or password!</p>
+<% end %>
 
 <form action='/authenticate' method='post'>
   <input type='text' placeholder='email' name='email'>
