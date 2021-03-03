@@ -6,7 +6,7 @@ feature 'user registration' do
     fill_in :password, with: 'test123'
     click_button 'Sign Up'
 
-    expect(page).to have_content 'Hello Test!'
+    expect(page).to have_content 'Hello, Test!'
     expect(page).not_to have_button 'Sign Up'
   end
 end

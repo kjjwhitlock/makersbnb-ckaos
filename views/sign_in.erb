@@ -1,5 +1,11 @@
-<form action='/sign_in' method='post'>
+
+ <% if @failed_authentication %>
+  <p> Check your email or password! </p>
+  <% end %>
+
+
+<form action='/authenticate' method='post'>
   <input type='text' placeholder='email' name='email'>
   <input type='password' placeholder='password' name='password'>
-  <input type='button' value= 'sign in' name='sign_in'>
+  <input type='submit' value='sign in' name='sign_in'>
 </form>

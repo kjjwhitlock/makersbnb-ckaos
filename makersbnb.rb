@@ -38,12 +38,20 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
-  get '/sign_in' do
+  get '/sessions/new' do
     erb :'sign_in'
   end
 
-  post '/sign_in' do
-    redirect '/sign_in'
+  post '/authenticate' do
+    user = User.authenticate(email: params[:email], password: params[:password])
+    if user
+      session[:id] = user.id
+      @failed_authentication = session[:failed_authentication] = false
+      redirect '/spaces'
+    else
+      session[:failed_authentication] = true
+      redirect 'sessions/new'
+    end
   end
 
   run! if app_file == $0
