@@ -2,7 +2,9 @@
 <center>
 Your requests<br>
 <% @requests.each do |request| %>
+<li>
    <%= request.space.name %><br>
    <%= request.space.description %>
+</li>
 <% end %>
 </center>
