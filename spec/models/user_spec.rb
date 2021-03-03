@@ -6,7 +6,6 @@ describe User do
       user = User.create(name: 'name', email: 'email', password: 'password')
       expect(user.name).to eq('name')
       expect(user.email).to eq('email')
-      expect(user.password).to eq('password')
     end
   end
 
@@ -17,6 +16,32 @@ describe User do
       expect(user2.name).to eq(user.name)
       expect(user2.id).to eq(user.id)
       expect(user2.email).to eq(user.email)
+    end
+  end
+
+  describe '.authenticate' do
+    it 'happy path: valid email and password' do
+      user = User.create(name: 'name', email: 'email', password: 'password')
+      authenticated_user = User.authenticate(email: 'email', password: 'password')
+      expect(user.email).to eq(authenticated_user.email)
+      expect(user.id).to eq(authenticated_user.id)
+      expect(user.name).to eq(authenticated_user.name)
+    end
+
+    it 'sad path: invalid email and password' do
+      user = User.create(name: 'name', email: 'email', password: 'password')
+      authenticated_user = User.authenticate(email: 'wrong_email', password: 'wrong_password')
+      expect(authenticated_user).to eq nil
+    end
+    it 'sad path: valid email and invalid password' do
+      user = User.create(name: 'name', email: 'email', password: 'password')
+      authenticated_user = User.authenticate(email: 'email', password: 'wrong_password')
+      expect(authenticated_user).to eq nil
+    end
+    it 'sad path: invalid email and valid password' do
+      user = User.create(name: 'name', email: 'email', password: 'password')
+      authenticated_user = User.authenticate(email: 'wrong_email', password: 'password')
+      expect(authenticated_user).to eq nil
     end
   end
 end
