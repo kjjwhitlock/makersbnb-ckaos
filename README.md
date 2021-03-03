@@ -11,30 +11,29 @@ Ticket board: https://trello.com/b/JEjfBQFP/team-ckaos-ticket-board
    so I can access it's features,
    I want to sign up as a user to MakersBNB. (*MVP*)
 
-10. As a user,
-    so that my information is recorded and I am contactable,
-    I want to be able to return to my account to sign-in. (*MVP*)
-
-11. As a user,
-    so that I can keep my private information secure when using a public computer,
-    I want to be able sign out of my account. (*MVP*)
-
 2. As a host,
    so that I can advertise my spare room,
    I would like to list a space. (*MVP*)
 
+10. As a user,
+    so that my information is recorded and I am contactable,
+    I want to be able to return to my account to sign-in. *
+
+11. As a user,
+    so that I can keep my private information secure when using a public computer,
+    I want to be able sign out of my account. *
+
 6. As a renter,
    so that I can rent a space for one night,
-   I would like to make a booking request.(*MVP*)
+   I would like to make a booking request. *
 
 7. As a host,
    so that I can control when I rent my space,
-   I would like to approve or decline a booking request.(*MVP*)
-
+   I would like to approve or decline a booking request.
 
 3. As a host,
    so that I can list my multiple spare rooms,
-   I would like to list multiple spaces. (not MVP)
+   I would like to list multiple spaces. (not MVP) *
 
 4. As a host,
    so that I can describe my space.
@@ -71,9 +70,22 @@ Branching
 
 To push a new branch to the remote repo:
 
-`git push --set-upstream origin <branch-name>`
+`git push -u origin <branch-name>`
 
 To pull an existing branch from the remote repo:
 
 `git checkout -b <branch-name>`
 `git branch --set-upstream-to=origin/<branch-name>`
+
+Requests table
+id | space_id              |  renter_id
+---|-----------------------|------------------------
+   | references spaces(id) |  references users (id)
+
+
+spaces
+host_id references users(id)
+
+click make booking
+
+request.renter
