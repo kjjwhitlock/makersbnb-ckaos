@@ -38,6 +38,14 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/sign_in' do
+    erb :'sign_in'
+  end
+
+  post '/sign_in' do
+    redirect '/sign_in'
+  end
+
   run! if app_file == $0
 
 end
