@@ -1,0 +1,10 @@
+
+<% if @alert %>
+   <p> Check your email or password!</p>
+<% end %>
+
+<form action='/authenticate' method='post'>
+  <input type='text' placeholder='email' name='email'>
+  <input type='password' placeholder='password' name='password'>
+  <input type='submit' value='sign in' name='sign_in'>
+</form>

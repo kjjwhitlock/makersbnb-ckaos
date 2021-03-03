@@ -38,6 +38,28 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/sessions/new' do
+    @alert = session[:alert]
+    erb :'sign_in'
+  end
+
+  post '/authenticate' do
+    user = User.authenticate(email: params[:email], password: params[:password])
+    if user
+      session[:id] = user.id
+      session[:alert] = nil
+      redirect '/spaces'
+    else
+      session[:alert] = true
+      redirect 'sessions/new'
+    end
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end
