@@ -16,6 +16,8 @@ require_relative '../makersbnb'
 
 Capybara.app = MakersBnb
 
+BCrypt::Engine.cost = 1
+
 RSpec.configure do |config|
 
   # config.before(:each) { Rake::Task['test_database_setup'].execute }

@@ -1,5 +1,5 @@
 feature 'listing multiple spaces' do
-  scenario 'spaces visible in user spaces page' do
+  xscenario 'spaces visible in user spaces page' do
     sign_up
 
     click_button 'Add a space'

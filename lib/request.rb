@@ -27,5 +27,4 @@ class Request
   def space(space_class = Space)
     space_class.find(id: space_id)
   end
-
 end
