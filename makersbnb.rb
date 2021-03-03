@@ -44,6 +44,7 @@ class MakersBnb < Sinatra::Base
     erb :'spaces/show'
   end
 
+
   post '/requests/:id' do
     Request.create(space_id: params[:id], renter_id: session[:id])
     redirect '/requests'
@@ -52,6 +53,7 @@ class MakersBnb < Sinatra::Base
   get '/requests' do
     @requests = Request.all
     erb :'requests/index'
+  end
 
   get '/sessions/new' do
     @alert = session[:alert]

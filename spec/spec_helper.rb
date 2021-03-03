@@ -2,6 +2,7 @@ require 'coveralls'
 require_relative 'setup_database'
 require_relative 'database_helper'
 require_relative './features/helpers'
+
 ENV['ENVIRONMENT'] = 'test'
 ENV['RACK_ENV'] = 'test'
 
