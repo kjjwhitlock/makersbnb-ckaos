@@ -15,6 +15,11 @@ class Space
      end
   end
 
+  def self.find(id:)
+    result = DatabaseConnection.query("SELECT * FROM spaces where id = #{id};")
+    Space.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], id: result[0]['id'])
+  end
+
   attr_reader :name, :description, :price, :id
 
   def initialize(name:, description:, price:, id:)

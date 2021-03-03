@@ -33,4 +33,16 @@ EXAMPLE_PRICE = "5"
     end
   end
 
+  describe '.find' do
+    it 'finds and returns a Space with the space id' do
+      space = Space.create(name: 'Example name 1', description: 'Example description 1', price: EXAMPLE_PRICE )
+      space2 = Space.find(id: space.id)
+
+      expect(space2).to be_a Space
+      expect(space2.name).to eq 'Example name 1'
+      expect(space2.description).to eq 'Example description 1'
+      expect(space2.price).to eq EXAMPLE_PRICE
+    end
+  end
+
 end
