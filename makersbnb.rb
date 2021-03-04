@@ -77,5 +77,11 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
+  get '/requests/received' do
+    p Space.find_by_host_id(host_id: session[:id])
+    # @requests = owned_spaces.map{|space| Request.find_by_space_id(space_id: space.id)}
+    erb :requests_received
+  end
+
   run! if app_file == $0
 end
