@@ -3,7 +3,7 @@ require 'database_helper'
 
 describe Space do
 EXAMPLE_PRICE = "5"
-EXAMPLE_HOST_ID = 1
+EXAMPLE_HOST_ID = "1"
   describe '.create' do
     it 'creates space and adds it to the database' do
       space = Space.create(name: 'Example name', description: 'Example description', price: EXAMPLE_PRICE, host_id: EXAMPLE_HOST_ID )
@@ -51,11 +51,11 @@ EXAMPLE_HOST_ID = 1
       space = Space.create(name: 'Example name 1', description: 'Example description 1', price: EXAMPLE_PRICE, host_id: EXAMPLE_HOST_ID )
       space2 = Space.find_by_host_id(host_id: EXAMPLE_HOST_ID)
 
-      expect(space2).to be_a Space
-      expect(space2.name).to eq 'Example name 1'
-      expect(space2.description).to eq 'Example description 1'
-      expect(space2.price).to eq EXAMPLE_PRICE
-      expect(space2.host_id).to eq EXAMPLE_HOST_ID
+      expect(space2[0]).to be_a Space
+      expect(space2[0].name).to eq 'Example name 1'
+      expect(space2[0].description).to eq 'Example description 1'
+      expect(space2[0].price).to eq EXAMPLE_PRICE
+      expect(space2[0].host_id).to eq EXAMPLE_HOST_ID
     end
   end
 

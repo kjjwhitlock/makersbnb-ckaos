@@ -22,8 +22,10 @@ class Space
 
 
   def self.find_by_host_id(host_id:)
-
-
+    result = DatabaseConnection.query("SELECT * FROM spaces where host_id = #{host_id};")
+    result.map do |space|
+      Space.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], id: result[0]['id'], host_id: result[0]['host_id'])
+    end
   end
   attr_reader :name, :description, :price, :id, :host_id
 
