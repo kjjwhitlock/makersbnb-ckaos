@@ -46,7 +46,7 @@ class MakersBnb < Sinatra::Base
 
 
   post '/requests/:id' do
-    Request.create(space_id: params[:id], renter_id: session[:id])
+    Request.create(space_id: params[:id], renter_id: session[:id], date: params[:date])
     redirect '/requests'
   end
 
@@ -75,6 +75,15 @@ class MakersBnb < Sinatra::Base
   post '/sessions/destroy' do
     session.clear
     redirect '/'
+  end
+
+  get '/date' do
+    @date = ['03/10/2021', '03/11/2021', '03/15/2021']
+    erb :date
+  end
+
+  get '/submitdates' do
+
   end
 
   run! if app_file == $0

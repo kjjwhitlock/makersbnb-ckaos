@@ -31,13 +31,21 @@ Ticket board: https://trello.com/b/JEjfBQFP/team-ckaos-ticket-board
    so that I can rent a space for one night,
    I would like to make a booking request. x
 
+4. As a host,
+   so that I can describe my space.
+   I would like to be able to add a name, description and price to my listing (not MVP)
+
+   ------------------------------
+
 7. As a host,
    so that I can control when I rent my space,
    I would like to approve or decline a booking request.
 
-4. As a host,
-   so that I can describe my space.
-   I would like to be able to add a name, description and price to my listing (not MVP)
+9. As a host,
+   so that I can have my pick of renters,
+   I want to allow multiple booking requests until I have confirmed a booking.(not MVP)
+
+
 
 5. As a host,
    so that I can rent my space on dates that I choose,
@@ -46,11 +54,6 @@ Ticket board: https://trello.com/b/JEjfBQFP/team-ckaos-ticket-board
 8. As a renter,
    to enhance my booking experience,
    I would like to only see available spaces.(not MVP)
-
-9. As a host,
-   so that I can have my pick of renters,
-   I want to allow multiple booking requests until I have confirmed a booking.(not MVP)
-
 
 ```
 ### Specifications ####
