@@ -77,5 +77,14 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
+  get '/date' do
+    @date = ['03/10/2021', '03/11/2021', '03/15/2021']
+    erb :date
+  end
+
+  get '/submitdates' do
+
+  end
+
   run! if app_file == $0
 end

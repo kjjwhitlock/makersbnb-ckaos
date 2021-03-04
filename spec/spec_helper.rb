@@ -14,6 +14,8 @@ require 'pg'
 
 require_relative '../makersbnb'
 
+BCrypt::Engine.cost = 1
+
 Capybara.app = MakersBnb
 
 BCrypt::Engine.cost = 1
