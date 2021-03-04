@@ -6,6 +6,8 @@
 <h1><%= @space.name %></h1>
 <p><%= @space.description %></p>
 
+<% if @user_id != @space.host_id %>
+
 <div class="bootstrap-iso">
  <div class="container-fluid">
   <div class="row">
@@ -47,8 +49,11 @@
             format: 'dd/mm/yyyy',
             container: container,
             todayHighlight: true,
-            autoclose: true
-            // datesDisabled: <%= @date %>
+            autoclose: true,
+            startDate: '<%= @space.start %>',
+            endDate: '<%= @space.end %>'
         })
     })
 </script>
+
+<% end %>

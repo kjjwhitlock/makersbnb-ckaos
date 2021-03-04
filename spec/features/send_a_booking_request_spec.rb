@@ -1,6 +1,6 @@
 feature 'Send a booking request' do
   scenario 'User can send a booking request' do
-    space = Space.create(name: 'Disneyland', description: "Mickey and Minnie's house", price: 1000, host_id: '1')
+    space = Space.create(name: 'Disneyland', description: "Mickey and Minnie's house", price: 1000, host_id: '1', start_date: '01/07/2021', end_date: '30/07/2021' )
 
     sign_up
     click_button 'View space'

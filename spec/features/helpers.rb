@@ -19,6 +19,8 @@ def add_space
   fill_in :name, with: 'Shangri-la'
   fill_in :description, with: 'Luxury penthouse in the heart of Shangri-la.'
   fill_in :price, with: '1000'
+  fill_in :start_date, with: '01/05/2021'
+  fill_in :end_date, with: '25/05/2021'
   click_button 'Submit'
 end
 
