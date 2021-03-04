@@ -1,4 +1,6 @@
 require 'coveralls'
+Coveralls.wear!
+
 require_relative 'setup_database'
 require_relative 'database_helper'
 require_relative './features/helpers'
