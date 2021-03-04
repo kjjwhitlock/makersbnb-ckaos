@@ -47,7 +47,7 @@ class MakersBnb < Sinatra::Base
 
 
   post '/requests/:id' do
-    Request.create(space_id: params[:id], renter_id: session[:id])
+    Request.create(space_id: params[:id], renter_id: session[:id],confirmed: 'pending')
     redirect '/requests'
   end
 
@@ -87,7 +87,8 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/requests_received' do
-    redirect '/requests_received' 
+    Request.update_availability(status: params[:status], request_id: params[:request_id])
+    redirect '/requests_received'
   end
 
   run! if app_file == $0

@@ -12,13 +12,13 @@ feature 'to make a decision about a recieved request' do
   end
   scenario 'User can see recieved requests' do
     recieve_requests
-    click_button('confirm')
-    expect(page).to have_content 'Request confirmed'
+    click_button('confirmed')
+    expect(page).to have_content 'confirmed'
   end
   scenario 'User can see recieved requests' do
     recieve_requests
     click_button('declined')
-    expect(page).to have_content 'Request declined'
+    expect(page).to have_content 'declined'
   end
 
 end

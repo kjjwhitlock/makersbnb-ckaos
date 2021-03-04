@@ -6,7 +6,7 @@ describe 'request' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
       space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
 
-      request = Request.create(space_id: space.id, renter_id: renter.id)
+      request = Request.create(space_id: space.id, renter_id: renter.id, confirmed: 'pending')
       persisted_data = persisted_data(table: 'requests', id: request.id)
       expect(request.renter_id).to eq renter.id
       expect(request.space_id).to eq space.id
@@ -18,9 +18,9 @@ describe 'request' do
     it 'retrieves all requests' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
       space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
-      request1 = Request.create(space_id: space.id, renter_id: renter.id)
-      request2 = Request.create(space_id: space.id, renter_id: renter.id)
-      request3 = Request.create(space_id: space.id, renter_id: renter.id)
+      request1 = Request.create(space_id: space.id, renter_id: renter.id, confirmed: 'pending')
+      request2 = Request.create(space_id: space.id, renter_id: renter.id, confirmed: 'pending')
+      request3 = Request.create(space_id: space.id, renter_id: renter.id, confirmed: 'pending')
 
       requests = Request.all
       persisted_data = persisted_data(table: 'requests', id: request1.id)
@@ -35,7 +35,7 @@ describe 'request' do
     it 'returns information about the space relevant to the request' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
       space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
-      request = Request.create(space_id: space.id, renter_id: renter.id)
+      request = Request.create(space_id: space.id, renter_id: renter.id, confirmed: 'pending')
 
       expect(request.space.name).to eq space.name
     end
@@ -46,9 +46,9 @@ describe 'request' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
       space1 = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
       space2 = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
-      request1 = Request.create(space_id: space1.id, renter_id: renter.id)
-      request2 = Request.create(space_id: space2.id, renter_id: renter.id)
-      request3 = Request.create(space_id: space1.id, renter_id: renter.id)
+      request1 = Request.create(space_id: space1.id, renter_id: renter.id, confirmed: 'pending')
+      request2 = Request.create(space_id: space2.id, renter_id: renter.id, confirmed: 'pending')
+      request3 = Request.create(space_id: space1.id, renter_id: renter.id, confirmed: 'pending')
       spaced_requests = Request.find_by_space_id(space_id: space1.id)
       expect(spaced_requests.length).to eq 2
     end
