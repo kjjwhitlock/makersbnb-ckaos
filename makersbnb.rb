@@ -36,7 +36,7 @@ class MakersBnb < Sinatra::Base
 
   post '/spaces' do
     Space.create(name: params[:name], description: params[:description], price: params[:price], host_id:  session[:id])
-    p session[:id]
+    session[:id]
     redirect '/spaces'
   end
 
@@ -80,9 +80,9 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/requests_received' do
-    p session[:id]
-    p @owned_spaces = Space.find_by_host_id(host_id: session[:id])
-    p @requests = @owned_spaces.map {|space| Request.find_by_space_id(space_id: space.id)}.flatten
+    session[:id]
+    @owned_spaces = Space.find_by_host_id(host_id: session[:id])
+    @requests = @owned_spaces.map {|space| Request.find_by_space_id(space_id: space.id)}.flatten
     erb :requests_received
   end
 

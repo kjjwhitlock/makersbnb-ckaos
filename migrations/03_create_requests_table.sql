@@ -5,4 +5,4 @@ CREATE TABLE requests (
 );
 
 ALTER TABLE requests ADD
-confirmed VARCHAR(60);
+confirmed VARCHAR (60);
