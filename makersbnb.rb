@@ -86,7 +86,7 @@ class MakersBnb < Sinatra::Base
     erb :requests_received
   end
 
-  post '/requests_received' do
+  post '/requests_received/:request_id' do
     Request.update_availability(status: params[:status], request_id: params[:request_id])
     redirect '/requests_received'
   end
