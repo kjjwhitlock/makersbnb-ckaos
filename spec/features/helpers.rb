@@ -45,6 +45,7 @@ end
 
 def send_request
   click_button('View space')
+  fill_in :date, with: '01/01/2022'
   click_button('Request to book')
 end
 
