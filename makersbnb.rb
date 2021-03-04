@@ -46,7 +46,7 @@ class MakersBnb < Sinatra::Base
 
 
   post '/requests/:id' do
-    Request.create(space_id: params[:id], renter_id: session[:id])
+    Request.create(space_id: params[:id], renter_id: session[:id], date: params[:date])
     redirect '/requests'
   end
 

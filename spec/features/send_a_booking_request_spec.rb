@@ -6,6 +6,7 @@ feature 'Send a booking request' do
     click_button 'View space'
 
     expect(current_path).to eq "/spaces/#{space.id}"
+    fill_in :date, with: '01/01/2022'
     click_button 'Request to book'
 
     expect(current_path).to eq "/requests"
