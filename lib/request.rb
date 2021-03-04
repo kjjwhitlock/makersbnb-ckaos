@@ -27,4 +27,15 @@ class Request
   def space(space_class = Space)
     space_class.find(id: space_id)
   end
+
+  def self.find_by_space_id(space_id:)
+    result = DatabaseConnection.query("SELECT * FROM requests WHERE space_id = #{space_id};")
+    result.map do |request|
+      Request.new(
+        id: request['id'],
+        space_id: request['space_id'],
+        renter_id: request['renter_id']
+      )
+    end
+  end
 end

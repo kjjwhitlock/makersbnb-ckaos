@@ -40,4 +40,17 @@ describe 'request' do
       expect(request.space.name).to eq space.name
     end
   end
+
+  describe '.find_by_space_id' do
+    it 'returns requests based on space_id' do
+      renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
+      space1 = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
+      space2 = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
+      request1 = Request.create(space_id: space1.id, renter_id: renter.id)
+      request2 = Request.create(space_id: space2.id, renter_id: renter.id)
+      request3 = Request.create(space_id: space1.id, renter_id: renter.id)
+      spaced_requests = Request.find_by_space_id(space_id: space1.id)
+      expect(spaced_requests.length).to eq 2
+    end
+  end
 end
