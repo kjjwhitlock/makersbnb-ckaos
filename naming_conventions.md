@@ -30,3 +30,6 @@ makersbnb_test: users, spaces
 
 
 ```
+#Request.update_avalibility(id:, confirmed:)
+#result = DataConnection.query("UPDATE confirmed where if = #{id}")
+#end

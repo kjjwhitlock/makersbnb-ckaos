@@ -20,7 +20,7 @@ class MakersBnb < Sinatra::Base
     email = params[:email]
     password = params[:password]
     user = User.create(name: name, email: email, password: password)
-    p session[:id]
+    session[:id]
     session[:id] = user.id
     redirect '/spaces'
   end
@@ -35,7 +35,8 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    Space.create(name: params[:name], description: params[:description], price: params[:price], host_id:  session[:id])
+    p session[:id]
     redirect '/spaces'
   end
 
@@ -46,7 +47,7 @@ class MakersBnb < Sinatra::Base
 
 
   post '/requests/:id' do
-    Request.create(space_id: params[:id], renter_id: session[:id], date: params[:date])
+    Request.create(space_id: params[:id], renter_id: session[:id], date: params[:date], confirmed: 'pending')
     redirect '/requests'
   end
 
@@ -56,6 +57,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/sessions/new' do
+    session[:id]
     @alert = session[:alert]
     erb :'sign_in'
   end
@@ -77,13 +79,16 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
-  get '/date' do
-    @date = ['03/10/2021', '03/11/2021', '03/15/2021']
-    erb :date
+  get '/requests_received' do
+    p session[:id]
+    p @owned_spaces = Space.find_by_host_id(host_id: session[:id])
+    p @requests = @owned_spaces.map {|space| Request.find_by_space_id(space_id: space.id)}.flatten
+    erb :requests_received
   end
 
-  get '/submitdates' do
-
+  post '/requests_received/:request_id' do
+    Request.update_availability(status: params[:status], request_id: params[:request_id])
+    redirect '/requests_received'
   end
 
   run! if app_file == $0
