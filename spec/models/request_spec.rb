@@ -1,8 +1,10 @@
+EXAMPLE_HOST_ID = 1
+
 describe 'request' do
   describe '.create' do
     it 'creates a request with the space and renter ids' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
-      space = Space.create(name: 'Space', description: 'Great Place!', price: 100)
+      space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
 
       request = Request.create(space_id: space.id, renter_id: renter.id)
       persisted_data = persisted_data(table: 'requests', id: request.id)
@@ -15,7 +17,7 @@ describe 'request' do
   describe '.all' do
     it 'retrieves all requests' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
-      space = Space.create(name: 'Space', description: 'Great Place!', price: 100)
+      space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
       request1 = Request.create(space_id: space.id, renter_id: renter.id)
       request2 = Request.create(space_id: space.id, renter_id: renter.id)
       request3 = Request.create(space_id: space.id, renter_id: renter.id)
@@ -32,7 +34,7 @@ describe 'request' do
   describe '#space' do
     it 'returns information about the space relevant to the request' do
       renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
-      space = Space.create(name: 'Space', description: 'Great Place!', price: 100)
+      space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID)
       request = Request.create(space_id: space.id, renter_id: renter.id)
 
       expect(request.space.name).to eq space.name

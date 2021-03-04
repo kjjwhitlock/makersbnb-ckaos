@@ -3,3 +3,6 @@ CREATE TABLE requests (
   space_id INTEGER REFERENCES spaces (id),
   renter_id INTEGER REFERENCES users (id)
 );
+
+ALTER TABLE requests ADD
+confirmed VARCHAR(60);

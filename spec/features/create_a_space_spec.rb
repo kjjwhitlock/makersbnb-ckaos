@@ -1,5 +1,7 @@
 feature 'To list a space' do
   scenario 'User can create a space' do
+    visit('/')
+    sign_up
     visit('/spaces')
     click_button('Add a space')
     fill_in :name, with: 'Shangri-la'
