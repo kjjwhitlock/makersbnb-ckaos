@@ -11,4 +11,9 @@ feature 'date picker' do
     expect(page).to have_content '01/01/2022'
     expect(page).to have_content 'Disney Land'
   end
+
+  scenario 'dates are greyed out if a booking has been confirmed on those dates for that space' do
+    Space.create(name: 'Disney Land', description: 'Lots of fun', price: '100')
+    sign_up
+  end
 end
