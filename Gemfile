@@ -7,6 +7,7 @@ gem 'sinatra'
 gem 'pg'
 gem 'rake'
 gem 'bcrypt'
+gem 'bootstrap', '~> 5.0.0.beta2'
 
 gem 'capybara'
 gem 'rspec'
