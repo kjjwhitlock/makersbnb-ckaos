@@ -4,7 +4,7 @@ class Request
   def self.create(space_id:, renter_id:)
     row = DatabaseConnection.query("INSERT INTO requests (space_id, renter_id)
     VALUES (#{space_id}, #{renter_id}) RETURNING *;")
-    new(id: row[0]['id'], space_id: row[0]['space_id'], renter_id: row[0]['renter_id'])
+    new(id: row[0]['id'], space_id: row[0]['space_id'], renter_id: row[0]['renter_id'], confirmed: row[0]['confirmed'])
   end
 
   def self.all
@@ -13,12 +13,13 @@ class Request
       Request.new(
         id: request['id'],
         space_id: request['space_id'],
-        renter_id: request['renter_id']
+        renter_id: request['renter_id'],
+        confirmed: request['confirmed']
       )
     end
   end
 
-  def initialize(id:, space_id:, renter_id:)
+  def initialize(id:, space_id:, renter_id:, confirmed:)
     @id = id
     @space_id = space_id
     @renter_id = renter_id
@@ -34,7 +35,8 @@ class Request
       Request.new(
         id: request['id'],
         space_id: request['space_id'],
-        renter_id: request['renter_id']
+        renter_id: request['renter_id'],
+        confirmed: request['confirmed']
       )
     end
   end

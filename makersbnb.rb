@@ -20,7 +20,7 @@ class MakersBnb < Sinatra::Base
     email = params[:email]
     password = params[:password]
     user = User.create(name: name, email: email, password: password)
-    p session[:id]
+    session[:id]
     session[:id] = user.id
     redirect '/spaces'
   end
@@ -36,6 +36,7 @@ class MakersBnb < Sinatra::Base
 
   post '/spaces' do
     Space.create(name: params[:name], description: params[:description], price: params[:price], host_id:  session[:id])
+    p session[:id]
     redirect '/spaces'
   end
 
@@ -56,6 +57,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/sessions/new' do
+    session[:id]
     @alert = session[:alert]
     erb :'sign_in'
   end
@@ -77,10 +79,15 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
-  get '/requests/received' do
-    p Space.find_by_host_id(host_id: session[:id])
-    # @requests = owned_spaces.map{|space| Request.find_by_space_id(space_id: space.id)}
+  get '/requests_received' do
+    p session[:id]
+    p @owned_spaces = Space.find_by_host_id(host_id: session[:id])
+    p @requests = @owned_spaces.map {|space| Request.find_by_space_id(space_id: space.id)}.flatten
     erb :requests_received
+  end
+
+  post '/requests_received' do
+    redirect '/requests_received' 
   end
 
   run! if app_file == $0

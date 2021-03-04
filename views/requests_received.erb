@@ -1,5 +1,24 @@
-<center> <ul><% @results.each do |result| %>
-  <li> <%= result.space_id %> <br>
-  </li>
-  <% end %>
+<center>
+
+
+  <ul>
+
+    <% @requests.each do |request| %>
+    <li>
+    <%   space = @owned_spaces.find { |space| request.space_id == space.id } %>
+    <%=  space.name %><br>
+    Renter ID :<%=  request.renter_id  %>
+    <form action='/requests_received' method="post">
+      <input type="submit" name="confirm" value="confirm">
+      <input type="submit" name="declined" value="decline">
+    </form>
+
+
+    </li>
+    <% end %>
 </ul>
+
+
+#Request.update_avalibility(id:, confirmed:)
+#result = DataConnection.query("UPDATE confirmed where if = #{id}")
+#end
