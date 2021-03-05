@@ -1,0 +1,20 @@
+* {
+  background-color: antiquewhite;
+  color: rgb(63, 63, 63);
+  text-align: center;
+}
+
+.navigation {
+  /* display: inline; */
+  color: rgb(194, 107, 107);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space {
+  margin-top: 40px;
+  line-height: 30px;
+}

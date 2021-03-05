@@ -5,6 +5,19 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
+    <% if @user %>
+      <div class="wrapper">
+        <a class="navigation" id="logo" href="/spaces">
+          Makers BnB
+        </a>
+        <form id="requests" class="navigation" action='/requests_received'>
+          <input type='submit' name='requests_received' value='Requests Received'>
+        </form>
+        <form id="sign-out" class="navigation" action="/sessions/destroy" method="post">
+          <input type='submit' name='sign_out' value='sign_out'>
+        </form>
+      </div>
+    <% end%>
     <%= yield %>
   </body>
 </html>
