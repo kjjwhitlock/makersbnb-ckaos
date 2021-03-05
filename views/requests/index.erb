@@ -1,11 +1,9 @@
 
 <center>
-Your requests<br>
+<h4>Your requests</h4><br>
 <% @requests.each do |request| %>
-<li>
-   <%= request.space.name %><br>
-   <%= request.space.description %>
-   <%= request.date %>
-</li>
+   <p><%= request.space.name %><br>
+   <%= request.space.description %><br>
+   <%= request.date %></p>
 <% end %>
 </center>

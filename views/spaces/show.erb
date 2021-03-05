@@ -8,6 +8,7 @@
 
 <% if @user_id != @space.host_id %>
 
+<article>
 <div class="bootstrap-iso">
  <div class="container-fluid">
   <div class="row">
@@ -56,5 +57,8 @@
         })
     })
 </script>
-
+<% else %>
+  <p class="space-desc">You are the host for this space<br>
+  Your specified availability is <%= @space.start %> to <%= @space.end %></p>
 <% end %>
+</article>

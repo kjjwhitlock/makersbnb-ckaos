@@ -1,32 +1,23 @@
 <% if @user %>
-  Hello, <%= @user.name %>!
+  <h5 class="greeting">Hello, <%= @user.name %>!</h5>
 <% end %>
 
-
-<center> <ul><% @spaces.each do |space| %>
-  <li> <%= space.name %> <br>
-       <%= space.description %> <br>
-       £<%= space.price %>
-       Available from <%= space.start_date %> to <%= space.end_date %>
-       <form action='/spaces/<%= space.id %>' method='get'>
-         <input type='submit' value='View space'>
-       </form>
-  </li>
-  <% end %>
-</ul>
-
-
-<form action='/requests_received'>
-  <input type='submit' name='requests_received' value='Requests Received'>
-</form>
-
-
 <form action='/spaces/new' method='get'>
-  <input type='submit' name='Add a space' value='Add a space'>
+  <input class="button" type='submit' name='Add a space' value='Add a space'>
 </form>
 
+<center>
+  <% @spaces.each do |space| %>
+    <article class="space">
+      <p class="space-name"><%= space.name %> <br>
+      <p class="space-desc"><%= space.description %><br>
+      £<%= space.price %><br>
+      Available <br>
+      <%= space.start %> to <%= space.end %></p>
+
+      <form action='/spaces/<%= space.id %>' method='get'>
+        <input class="button" type='submit' value='View space'>
+      </form>
+    </article>
+  <% end %>
 </center>
-
-<form action="/sessions/destroy" method="post">
-  <input type='submit' name='sign_out' value='sign_out'>
-</form>

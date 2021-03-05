@@ -1,26 +1,20 @@
 <center>
-
-
-  <ul>
+  <ul style="list-style-type:none">
 
     <% @requests.map do |request| %>
-    <li>
-    <%   space = @owned_spaces.find { |space| request.space_id == space.id } %>
+    <% space = @owned_spaces.find { |space| request.space_id == space.id } %>
     <%=  space.name %><br>
-    Renter ID :<%=  request.renter_id  %>
     Status : <%=  request.confirmed  %>
     Date booked: <%= request.date %>
     <% if request.confirmed == 'pending' %>
     <form action='/requests_received/<%= request.id %>' method="post">
-      <input type="submit" name="status" value="confirmed">
+      <input type="submit" name="status" value="confirmed"><br>
 
     </form>
 
     <form action='/requests_received/<%= request.id %>' method="post">
       <input type="submit" name="status" value="declined">
     </form>
-
-    </li>
     <% end %>
     <% end %>
 </ul>
