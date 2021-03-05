@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/setup_database.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/setup_database.rb": [
         1,
         null,
         1,
@@ -9,13 +9,13 @@
         28,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/database_helper.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/database_helper.rb": [
         1,
         1,
         4,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/lib/database_connection.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/lib/database_connection.rb": [
         1,
         null,
         1,
@@ -28,7 +28,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/helpers.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/helpers.rb": [
         1,
         7,
         7,
@@ -93,7 +93,7 @@
         2,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/makersbnb.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/makersbnb.rb": [
         1,
         1,
         1,
@@ -191,7 +191,7 @@
         1,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/database_connection_setup.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/database_connection_setup.rb": [
         1,
         null,
         null,
@@ -203,7 +203,7 @@
         0,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/lib/user.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/lib/user.rb": [
         1,
         null,
         1,
@@ -234,7 +234,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/lib/request.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/lib/request.rb": [
         1,
         1,
         null,
@@ -304,7 +304,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/lib/space.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/lib/space.rb": [
         1,
         1,
         null,
@@ -369,7 +369,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/confirm_and_decline_request_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/confirm_and_decline_request_spec.rb": [
         1,
         1,
         1,
@@ -395,7 +395,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/create_a_space_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/create_a_space_spec.rb": [
         1,
         1,
         1,
@@ -414,7 +414,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/date_picker_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/date_picker_spec.rb": [
         1,
         1,
         1,
@@ -431,7 +431,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/listing_multiple_spaces_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/listing_multiple_spaces_spec.rb": [
         1,
         1,
         0,
@@ -454,7 +454,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/send_a_booking_request_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/send_a_booking_request_spec.rb": [
         1,
         1,
         1,
@@ -472,7 +472,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/user_authentication_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/user_authentication_spec.rb": [
         1,
         1,
         1,
@@ -502,7 +502,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/features/user_registration_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/features/user_registration_spec.rb": [
         1,
         1,
         1,
@@ -512,7 +512,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/models/database_connection_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/models/database_connection_spec.rb": [
         1,
         1,
         1,
@@ -530,7 +530,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/models/request_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/models/request_spec.rb": [
         1,
         1,
         1,
@@ -613,7 +613,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/models/space_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/models/space_spec.rb": [
         1,
         1,
         null,
@@ -681,7 +681,7 @@
         null,
         null
       ],
-      "/Users/adamjonas/Projects/makers/week-5/makersbnb-ckaos/spec/models/user_spec.rb": [
+      "/home/olga/Projects/makersbnb-ckaos/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -731,6 +731,6 @@
         null
       ]
     },
-    "timestamp": 1614941695
+    "timestamp": 1614943999
   }
 }

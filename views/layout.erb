@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>Makers BnB - CKAOS</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
+    <img id='logo' src='house.png'/>
     <% if @user %>
       <div class="wrapper">
         <a class="navigation" id="logo" href="/spaces">
@@ -14,7 +17,7 @@
           <input type='submit' name='requests_received' value='Requests Received'>
         </form>
         <form id="sign-out" class="navigation" action="/sessions/destroy" method="post">
-          <input type='submit' name='sign_out' value='sign_out'>
+          <input type='submit' name='sign_out' value='Sign out'>
         </form>
       </div>
     <% end%>

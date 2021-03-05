@@ -1,7 +1,9 @@
-* {
-  background-color: antiquewhite;
+body {
+  background-color:;
   color: rgb(63, 63, 63);
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 60px;
 }
 
 .navigation {
@@ -17,4 +19,26 @@
 .space {
   margin-top: 40px;
   line-height: 30px;
+}
+
+input {
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: grey;
+  color:white;
+
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.space_input {
+  margin-top: 20px;
+  background-color: white;
+  color: grey;
+}
+
+#logo {
+  width: 120px;
+  margin-right:1200px;
+  margin
 }
