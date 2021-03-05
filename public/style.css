@@ -85,9 +85,28 @@ img {
 
 h1 {
   margin-bottom: 40px;
+  margin-left: 260px;
 }
 
 .account {
   font-size: 20px;
   margin-top: 20px;
+}
+
+.space-intro {
+  text-align: left;
+  margin-left: 580px;
+}
+
+#space-name {
+  margin-left: 60px;
+}
+
+#space-description {
+  margin-left: 140px;
+  margin-bottom: 50px;
+}
+
+#date-button {
+
 }

@@ -4,8 +4,8 @@
     <% @requests.map do |request| %>
     <% space = @owned_spaces.find { |space| request.space_id == space.id } %>
     <%=  space.name %><br>
-    Status : <%=  request.confirmed  %>
-    Date booked: <%= request.date %>
+    Status : <%=  request.confirmed  %><br>
+    Date booked: <%= request.date %><br>
     <% if request.confirmed == 'pending' %>
     <form action='/requests_received/<%= request.id %>' method="post">
       <input type="submit" name="status" value="confirmed"><br>
