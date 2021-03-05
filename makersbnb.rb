@@ -81,7 +81,6 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/requests_received' do
-    session[:id]
     @owned_spaces = Space.find_by_host_id(host_id: session[:id])
     @requests = @owned_spaces.map {|space| Request.find_by_space_id(space_id: space.id)}.flatten
     erb :requests_received
