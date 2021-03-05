@@ -2,25 +2,29 @@
 <html>
   <head>
     <title>Makers BnB - CKAOS</title>
+    <link rel="shortcut icon" type="image/png" href="/house.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   </head>
   <body>
-    <img id='logo' src='house.png'/>
-    <% if @user %>
-      <div class="wrapper">
-        <a class="navigation" id="logo" href="/spaces">
-          Makers BnB
-        </a>
-        <form id="requests" class="navigation" action='/requests_received'>
-          <input type='submit' name='requests_received' value='Requests Received'>
+    <heading class="wrapper">
+      <a class="navigation" id="logo" href="/spaces">
+        <img id='logo' src='/house.png'/>
+      </a>
+      <% if @user %>
+        <form class="navigation" action='/requests_received'>
+          <input class="button" id="requests" type='submit' name='requests_received' value='Requests Received'>
         </form>
-        <form id="sign-out" class="navigation" action="/sessions/destroy" method="post">
-          <input type='submit' name='sign_out' value='Sign out'>
+        <form class="navigation" action="/sessions/destroy" method="post">
+          <input class="button" id="sign-out" type='submit' name='sign_out' value='Sign out'>
         </form>
-      </div>
-    <% end%>
-    <%= yield %>
+      </heading>
+      <% end%>
+    <article class="sign-up-form">
+      <h1>Makers BnB</h1>
+      <%= yield %>
+    </article>
   </body>
 </html>

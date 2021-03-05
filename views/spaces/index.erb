@@ -1,21 +1,23 @@
 <% if @user %>
-  <h3 class="greeting">Hello, <%= @user.name %>!</h3>
+  <h5 class="greeting">Hello, <%= @user.name %>!</h5>
 <% end %>
 
 <form action='/spaces/new' method='get'>
-  <input type='submit' name='Add a space' value='Add a space'>
+  <input class="button" type='submit' name='Add a space' value='Add a space'>
 </form>
 
 <center>
   <% @spaces.each do |space| %>
     <article class="space">
-      <%= space.name %> <br>
-          <%= space.description %> <br>
-          £<%= space.price %>
-          Available from <%= space.start_date %> to <%= space.end_date %>
-          <form action='/spaces/<%= space.id %>' method='get'>
-            <input type='submit' value='View space'>
-          </form>
+      <p class="space-name"><%= space.name %> <br>
+      <p class="space-desc"><%= space.description %><br>
+      £<%= space.price %><br>
+      Available <br>
+      <%= space.start %> to <%= space.end %></p>
+
+      <form action='/spaces/<%= space.id %>' method='get'>
+        <input class="button" type='submit' value='View space'>
+      </form>
     </article>
   <% end %>
 </center>

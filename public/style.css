@@ -1,19 +1,16 @@
-body {
+* {
   background-color:;
   color: rgb(63, 63, 63);
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 60px;
+  font-family: 'poppins';
+  box-sizing: border-box;
+  margin: 0px;
+  border: 0px;
+  background-color: #fcf1f1;
 }
 
 .navigation {
-  /* display: inline; */
+  display: inline;
   color: rgb(194, 107, 107);
-}
-
-.wrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 .space {
@@ -25,20 +22,72 @@ input {
   border-radius: 20px;
   padding: 10px;
   box-shadow: grey;
-  color:white;
-
+  color:rgb(77, 77, 77);
   font-weight: 700;
   font-size: 17px;
+  box-shadow: 1px 2px rgb(128, 127, 127);
+  text-align: center;
+  background-color: white;
 }
 
 .space_input {
   margin-top: 20px;
   background-color: white;
-  color: grey;
+  color: rgb(77, 77, 77);
 }
 
-#logo {
+.sign-up-form {
+  /* margin-top: 10px; */
+  font-size: 30px;
+}
+
+textarea {
+  box-shadow: 1px 2px rgb(128, 127, 127);
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+article {
+  text-align: center;
+}
+
+#sign-out, #requests {
+  float: right;
+  margin-right: 10px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+img {
   width: 120px;
-  margin-right:1200px;
-  margin
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: -70px;
+}
+
+.button {
+  background-color: rgb(255, 172, 172);
+  margin-top: 10px;
+}
+
+.space-desc {
+  font-size: 20px;
+}
+
+.bootstrap-iso {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.account {
+  font-size: 20px;
+  margin-top: 20px;
 }
