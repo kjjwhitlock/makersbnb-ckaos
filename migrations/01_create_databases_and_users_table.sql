@@ -1,12 +1,9 @@
 CREATE DATABASE makersbnb;
 CREATE DATABASE makersbnb_test;
 
-CREATE TABLE spaces (
+CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name VARCHAR(60),
-  description VARCHAR(500),
-  price INTEGER
+  email VARCHAR(60) UNIQUE,
+  password VARCHAR(60)
 );
-
-ALTER TABLE spaces
-ADD host_id INTEGER;
