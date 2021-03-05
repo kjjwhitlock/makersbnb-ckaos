@@ -62,5 +62,18 @@ EXAMPLE_END_DATE = "30/10/2021"
     end
   end
 
+  describe '.booking_dates' do
+    it 'returns all booking dates of a space that have confirmed bookings' do
+      renter = User.create(name: 'Test', email: 'test@test.com', password: 'pw123')
+      space = Space.create(name: 'Space', description: 'Great Place!', price: 100, host_id: EXAMPLE_HOST_ID, start_date: EXAMPLE_START_DATE, end_date: EXAMPLE_END_DATE)
+      request1 = Request.create(space_id: space.id, renter_id: renter.id, date: '10/03/2022', confirmed: 'confirmed')
+      request2 = Request.create(space_id: space.id, renter_id: renter.id, date: '10/03/2022', confirmed: 'confirmed')
+
+      dates = space.booking_dates
+
+      expect(dates.length).to eq 2
+      expect(dates.first).to eq '10/03/2022'
+    end
+  end
 
 end

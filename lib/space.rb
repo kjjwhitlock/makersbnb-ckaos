@@ -60,4 +60,16 @@ class Space
     @dates << date
   end
 
+  def booking_dates
+   dates = []
+   result = DatabaseConnection.query("SELECT to_char(date, 'DD/MM/YYYY') FROM requests WHERE space_id = #{@id} AND confirmed = 'confirmed';")
+
+   result.each do |request|
+     dates << request['to_char']
+   end
+
+   dates
+ end
+
+
 end
