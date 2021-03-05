@@ -1,6 +1,3 @@
-ALTER TABLE requests
-ADD COLUMN date DATE NOT NULL;
-
 ALTER TABLE spaces
 ADD COLUMN start_date DATE;
 

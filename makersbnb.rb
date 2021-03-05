@@ -35,12 +35,13 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price], host_id:  session[:id])
-    session[:id]
+
+    Space.create(name: params[:name], description: params[:description], price: params[:price], host_id:  session[:id], start_date: params[:start_date], end_date: params[:end_date])
     redirect '/spaces'
   end
 
   get '/spaces/:id' do
+    @user_id = session[:id]
     @space = Space.find(id: params[:id])
     erb :'spaces/show'
   end
@@ -52,7 +53,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/requests' do
-    @requests = Request.all
+    @requests = Request.find_by_renter_id(renter_id: session[:id])
     erb :'requests/index'
   end
 

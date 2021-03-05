@@ -11,7 +11,7 @@ class Request
 
   def self.all
     result = DatabaseConnection.query("SELECT id, space_id, renter_id,
-      TO_CHAR(date, 'DD/MM/YYYY') FROM requests;")
+      TO_CHAR(date, 'DD/MM/YYYY'), confirmed FROM requests;")
 
     result.map do |request|
       Request.new(
@@ -51,5 +51,18 @@ class Request
 
   def self.update_availability(status:,request_id:)
     result = DatabaseConnection.query("UPDATE requests SET confirmed='#{status}' WHERE id='#{request_id}';")
+  end
+
+  def self.find_by_renter_id(renter_id:)
+    result = DatabaseConnection.query("SELECT id, space_id, renter_id, TO_CHAR(date, 'DD/MM/YYYY'), confirmed FROM requests WHERE renter_id=#{renter_id};")
+    result.map do |request|
+      Request.new(
+        id: request['id'],
+        space_id: request['space_id'],
+        renter_id: request['renter_id'],
+        date: request['to_char'],
+        confirmed: request['confirmed']
+      )
+    end
   end
 end
