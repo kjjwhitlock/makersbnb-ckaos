@@ -9,6 +9,7 @@
     <%=  space.name %><br>
     Renter ID :<%=  request.renter_id  %>
     Status : <%=  request.confirmed  %>
+    Date booked: <%= request.date %>
     <% if request.confirmed == 'pending' %>
     <form action='/requests_received/<%= request.id %>' method="post">
       <input type="submit" name="status" value="confirmed">
